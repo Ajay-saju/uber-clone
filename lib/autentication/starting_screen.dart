@@ -10,6 +10,8 @@ class StartingScreen extends StatefulWidget {
 class _StartingScreenState extends State<StartingScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return  Container(
+      decoration: BoxDecoration(image: DecorationImage(image: AssetImage('asset/ Stating page.jpg'))),
+    );
   }
 }
