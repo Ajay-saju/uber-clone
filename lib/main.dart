@@ -1,3 +1,4 @@
+import 'package:driver/custome/custom_theme.dart';
 import 'package:driver/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -5,12 +6,18 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp(
       child: MaterialApp(
+          // themes making adaptive
+          darkTheme: customDarkTheme(),
           debugShowCheckedModeBanner: false,
           title: 'Driver App',
-          theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-            useMaterial3: true,
-          ),
+          // theme: customLightTheme(),
+          themeMode: ThemeMode.system,
+          theme: lightTheme(),
+          //  ThemeData(
+          //   brightness: Brightness.light,
+          //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          //   useMaterial3: true,
+          // ),
           home: MySplashScreen()
           //  Scaffold(
           //   appBar: AppBar(

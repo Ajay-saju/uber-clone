@@ -11,7 +11,16 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('Sign Up')),
+      body: Center(
+        child: Column(
+          children: [
+            Text('Register as driver'),
+            Form(
+              child: Column(children: []),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
