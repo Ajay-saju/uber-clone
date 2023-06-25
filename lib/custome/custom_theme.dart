@@ -1,3 +1,4 @@
+import "package:driver/constants/app_colors.dart";
 import "package:flutter/material.dart";
 
 ThemeData customLightTheme() {
@@ -57,35 +58,45 @@ ThemeData customLightTheme() {
 ThemeData lightTheme() {
   final ThemeData lightTheme = ThemeData.light();
   return lightTheme.copyWith(
-    colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-    useMaterial3: true,
-     tabBarTheme: lightTheme.tabBarTheme.copyWith(
-      labelColor: Color(0xffce107c),
-      unselectedLabelColor: Colors.grey,
-    ),
-    buttonTheme: lightTheme.buttonTheme.copyWith(buttonColor: Colors.red),
-    indicatorColor: Color(0xFF807A6B),
-    scaffoldBackgroundColor: Color(0xFFF5F5F5),
-    primaryIconTheme: lightTheme.primaryIconTheme.copyWith(
-      color: Colors.white,
-      size: 20,
-    ),
-    iconTheme: lightTheme.iconTheme.copyWith(
-      color: Colors.white,
-    ),
-  );
+      colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      useMaterial3: true,
+      textTheme: TextTheme(
+        bodyMedium: TextStyle(
+          color: navBarColor, // Set the text color for dark mode
+        ),
+      ),
+      tabBarTheme: lightTheme.tabBarTheme.copyWith(
+        labelColor: Color(0xffce107c),
+        unselectedLabelColor: Colors.grey,
+      ),
+      buttonTheme: lightTheme.buttonTheme.copyWith(buttonColor: Colors.red),
+      indicatorColor: Color(0xFF807A6B),
+      scaffoldBackgroundColor: Color(0xFFF5F5F5),
+      primaryIconTheme: lightTheme.primaryIconTheme.copyWith(
+        color: Colors.white,
+        size: 20,
+      ),
+      iconTheme: IconThemeData(color: navBarColor));
 }
 
 ThemeData customDarkTheme() {
   final ThemeData darkTheme = ThemeData.dark();
   return darkTheme.copyWith(
-    primaryColor: Colors.black38,
-    indicatorColor: Color(0xFF807A6B),
-//  accentColor: Color(0xFFFFF8E1),
-    primaryIconTheme: darkTheme.primaryIconTheme.copyWith(
-      color: Colors.green,
-      size: 20,
+    brightness: Brightness.dark,
+    primaryColor:
+        Colors.black38, // or Brightness.light based on the current mode
+    textTheme: TextTheme(
+      bodyMedium: TextStyle(
+        color: Colors.amber, // Set the text color for dark mode
+      ),
     ),
-//  cursorColor: Colors.green,
+//     primaryColor: Colors.black38,
+//     indicatorColor: Color(0xFF807A6B),
+// //  accentColor: Color(0xFFFFF8E1),
+//     primaryIconTheme: darkTheme.primaryIconTheme.copyWith(
+//       color: Colors.green,
+//       size: 20,
+//     ),
+// //  cursorColor: Colors.green,
   );
 }
